@@ -54,10 +54,10 @@ if exist "%APPDATA%"\codmvm_launcher\iw3mvm (
 	copy "%APPDATA%"\codmvm_launcher\iw3mvm\IW3MVM_CLIENT.dll iw3mvm.dll
 	powershell -Command "Invoke-WebRequest https://github.com/kruumy/iw3xo-one-click-installer/raw/main/mvminjector.zip -OutFile mvminjector.zip"
 	powershell -Command "Expand-Archive -LiteralPath mvminjector.zip"
-	del iw3xo_b3428.zip
+	del mvminjector.zip
+	move mvminjector\*
+	RMDIR /S /Q mvminjector
 )
-
-cls
 
 echo Install Complete...
 
