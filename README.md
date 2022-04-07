@@ -10,6 +10,5 @@
 
 ## Todo
 1. Make it auto install reshade too.
-2. Make it ask before installing mvm, some people may not want it.
 ***
 
