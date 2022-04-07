@@ -2,6 +2,12 @@
 title unofficial iw3xo installer
 color 0a
 
+set testdir=%~dp0
+set myguid={A4E30755-FE04-4ab7-BD7F-E006E37B7BF7}.tmp
+set waccess=0
+echo.> "%testdir%\%myguid%"&&(set waccess=1&del "%testdir%\%myguid%")
+
+if "%waccess%"=="1" (goto skip)
 
 fltmc >nul 2>&1 || (
     echo Administrator privileges are required.
@@ -11,6 +17,8 @@ fltmc >nul 2>&1 || (
     )
     exit 0
 )
+
+:skip
 
 cd %~dp0
 if exist "%LOCALAPPDATA%"\CallofDuty4MW (  
@@ -23,10 +31,9 @@ cls
 if exist iw3xo.exe (
 	echo It seems you have IW3xo installed already...
 	echo We found that this directroy has the iw3xo.exe
+	pause
+	cls
 )
-
-pause
-cls
 
 echo Current Cod4 directory: %~dp0
 echo Is this OK? If not make sure the installer is in the COD4 Directory
