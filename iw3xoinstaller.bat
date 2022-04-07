@@ -48,6 +48,12 @@ powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/kruumy/
 cls
 
 REM for somereason latest version of iw3xo's auto iw3mvm loader does not work, using a different dll injector.
+echo IW3xo Complete
+echo Continue if you would like to install IW3mvm aswell into the client
+pause
+
+cls
+
 if exist "%APPDATA%"\codmvm_launcher\iw3mvm (
 	echo Installing IW3MVM
 	copy "%APPDATA%"\codmvm_launcher\iw3mvm\IW3MVM_CLIENT.dll iw3xo\bin\iw3mvm.dll.bak
