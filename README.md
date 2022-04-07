@@ -8,10 +8,6 @@
 3. Run it
 4. Done!
 
-## Note
-
-If you run it and the files dont install to your cod4 directroy, open the installer in a text editor and delete lines 6-13.
-
 ## Todo
 1. Make it auto install reshade too.
 ***
