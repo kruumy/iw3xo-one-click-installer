@@ -43,6 +43,22 @@ move iw3xo_b3428\*
 del /F /S /Q iw3xo_b3428
 RMDIR /S /Q iw3xo_b3428
 
+powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/kruumy/iw3xo-one-click-installer/main/START_IW3xo.bat -OutFile START_IW3xo.bat"
+
+cls
+
+REM for somereason latest version of iw3xo's auto iw3mvm loader does not work, using a different dll injector.
+if exist "%APPDATA%"\codmvm_launcher\iw3mvm (
+	echo Installing IW3MVM
+	copy "%APPDATA%"\codmvm_launcher\iw3mvm\IW3MVM_CLIENT.dll iw3xo\bin\iw3mvm.dll.bak
+	copy "%APPDATA%"\codmvm_launcher\iw3mvm\IW3MVM_CLIENT.dll iw3mvm.dll
+	powershell -Command "Invoke-WebRequest https://github.com/kruumy/iw3xo-one-click-installer/raw/main/mvminjector.zip -OutFile mvminjector.zip"
+	powershell -Command "Expand-Archive -LiteralPath mvminjector.zip"
+	del iw3xo_b3428.zip
+)
+
+cls
+
 echo Install Complete...
 
 pause
