@@ -10,5 +10,7 @@
 
 Note: Make sure you do not have COD4X installed.
 
+## Todo
+1. Make it auto install reshade too.
 ***
 
