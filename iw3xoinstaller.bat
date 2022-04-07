@@ -59,6 +59,8 @@ if exist "%APPDATA%"\codmvm_launcher\iw3mvm (
 	RMDIR /S /Q mvminjector
 )
 
+cls
+
 echo Install Complete...
 
 pause
