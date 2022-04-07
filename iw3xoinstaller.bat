@@ -35,6 +35,8 @@ if exist iw3xo.exe (
 	cls
 )
 
+cd %~dp0
+
 echo Current Cod4 directory: %~dp0
 echo Is this OK? If not make sure the installer is in the COD4 Directory
 pause
