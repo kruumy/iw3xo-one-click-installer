@@ -41,38 +41,24 @@ echo Current Cod4 directory: %~dp0
 echo Is this OK? If not make sure the installer is in the COD4 Directory
 pause
 
-powershell -Command "Invoke-WebRequest https://github.com/xoxor4d/iw3xo-dev/releases/download/3428/iw3xo_b3428.zip -OutFile iw3xo_b3428.zip"
-powershell -Command "Expand-Archive -LiteralPath iw3xo_b3428.zip"
-del iw3xo_b3428.zip
+echo Installing iw3xo
+powershell -Command "Invoke-WebRequest https://github.com/xoxor4d/iw3xo-dev/releases/download/3430/iw3xo_b3430.zip -OutFile iw3xo_b3430.zip"
+powershell -Command "Expand-Archive -LiteralPath iw3xo_b3430.zip"
+del iw3xo_b3430.zip
 md iw3xo\bin\
-move iw3xo_b3428\iw3xo\bin\* iw3xo\bin\
-move iw3xo_b3428\main\* main\
-move iw3xo_b3428\zone\english\* zone\english\
-move iw3xo_b3428\*
-del /F /S /Q iw3xo_b3428
-RMDIR /S /Q iw3xo_b3428
+move iw3xo_b3430\iw3xo\bin\* iw3xo\bin\
+move iw3xo_b3430\main\* main\
+move iw3xo_b3430\zone\english\* zone\english\
+move iw3xo_b3430\*
+del /F /S /Q iw3xo_b3430
+RMDIR /S /Q iw3xo_b3430
 
+echo Installing START_IW3xo.bat
 powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/kruumy/iw3xo-one-click-installer/main/START_IW3xo.bat -OutFile START_IW3xo.bat"
 
-cls
+echo Installing IW3MVM
+powershell -Command "Invoke-WebRequest https://github.com/kruumy/iw3xo-one-click-installer/raw/main/iw3mvm.dll -OutFile iw3xo\bin\iw3mvm.dll"
 
-REM for somereason latest version of iw3xo's auto iw3mvm loader does not work, using a different dll injector
-if exist "%APPDATA%"\codmvm_launcher\iw3mvm (
-	echo IW3xo Complete
-	echo Continue if you would like to install IW3mvm into the client -auto loads iw3mvm-
-	pause
-	cls
-	echo Installing IW3MVM
-	copy "%APPDATA%"\codmvm_launcher\iw3mvm\IW3MVM_CLIENT.dll iw3xo\bin\iw3mvm.dll.bak
-	copy "%APPDATA%"\codmvm_launcher\iw3mvm\IW3MVM_CLIENT.dll iw3mvm.dll
-	powershell -Command "Invoke-WebRequest https://github.com/kruumy/iw3xo-one-click-installer/raw/main/mvminjector.zip -OutFile mvminjector.zip"
-	powershell -Command "Expand-Archive -LiteralPath mvminjector.zip"
-	del mvminjector.zip
-	move mvminjector\*
-	RMDIR /S /Q mvminjector
-)
-
-cls
 
 echo Install Complete...
 
