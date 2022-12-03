@@ -1,5 +1,3 @@
-# One Click [IW3xo](https://github.com/xoxor4d/iw3xo-dev) Installer
-
 ## Instructions
 
 Make sure you have codmvm and iw3mvm updated before running installer.
