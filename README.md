@@ -1,7 +1,5 @@
 # One Click [IW3xo](https://github.com/xoxor4d/iw3xo-dev) Installer
 
-![preview](https://raw.githubusercontent.com/kruumy/ffmpeg-youtube-dl-installer/main/preview.png)
-
 ## Instructions
 
 Make sure you have codmvm and iw3mvm updated before running installer.
